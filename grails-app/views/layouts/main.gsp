@@ -22,7 +22,12 @@
 	</head>
         <div>
 	<body>
-          <div id="grailsLogo" role="banner"><img src="${resource(dir: 'images',file: 'nutricion5.png')}"/><font size="7">&nbsp;NutriEval</font><font size=3>&nbsp;&nbsp;&nbsp;&nbsp;Edición Adultos Mayores</font></div>
+          <div id="grailsLogo" role="banner"><img src="${resource(dir: 'images',file: 'nutricion5.png')}"/><font size="7">&nbsp;NutriEval</font><font size=3>&nbsp;&nbsp;&nbsp;&nbsp;Edición Adultos Mayores</font>
+      <sec:ifLoggedIn>
+        <a href="${createLink(controller:'logout')}" style="float:right; color: #000">Salir</a>
+      </sec:ifLoggedIn>
+          
+          </div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

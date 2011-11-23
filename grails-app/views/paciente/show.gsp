@@ -133,9 +133,27 @@
 			
 				<g:if test="${pacienteInstance?.talla}">
 				<li class="fieldcontain">
-					<span id="talla-label" class="property-label"><g:message code="paciente.talla.label" default="Talla" /></span>
+					<span id="talla-label" class="property-label"><g:message code="paciente.talla.label" default="Estatura (m)" /></span>
 					
 						<span class="property-value" aria-labelledby="talla-label"><g:fieldValue bean="${pacienteInstance}" field="talla"/></span>
+					
+				</li>
+				</g:if>
+                             
+                               <g:if test="${pacienteInstance?.IMC}">
+				<li class="fieldcontain">
+					<span id="IMC-label" class="property-label"><g:message code="paciente.IMC.label" default="IMC" /></span>
+					
+						<span class="property-value" aria-labelledby="IMC-label"><g:fieldValue bean="${pacienteInstance}" field="IMC"/></span>
+					
+				</li>
+				</g:if>
+                          
+                          <g:if test="${pacienteInstance?.perimetroPantorrilla}">
+				<li class="fieldcontain">
+					<span id="perimetroPantorrilla-label" class="property-label"><g:message code="paciente.perimetroPantorrilla.label" default="Perimetro Pantorrilla" /></span>
+					
+						<span class="property-value" aria-labelledby="perimetroPantorrilla-label"><g:fieldValue bean="${pacienteInstance}" field="perimetroPantorrilla"/></span>
 					
 				</li>
 				</g:if>
@@ -149,20 +167,40 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${pacienteInstance?.perimetroPantorrilla}">
-				<li class="fieldcontain">
-					<span id="perimetroPantorrilla-label" class="property-label"><g:message code="paciente.perimetroPantorrilla.label" default="Perimetro Pantorrilla" /></span>
-					
-						<span class="property-value" aria-labelledby="perimetroPantorrilla-label"><g:fieldValue bean="${pacienteInstance}" field="perimetroPantorrilla"/></span>
-					
-				</li>
-				</g:if>
+				
 			
 				<g:if test="${pacienteInstance?.perimetroMedioBranquial}">
 				<li class="fieldcontain">
 					<span id="perimetroMedioBranquial-label" class="property-label"><g:message code="paciente.perimetroMedioBranquial.label" default="Perimetro Medio Branquial" /></span>
 					
 						<span class="property-value" aria-labelledby="perimetroMedioBranquial-label"><g:fieldValue bean="${pacienteInstance}" field="perimetroMedioBranquial"/></span>
+					
+				</li>
+				</g:if>
+                          
+                          <g:if test="${pacienteInstance?.paniculoAdiposoSubrescapula}">
+				<li class="fieldcontain">
+					<span id="paniculoAdiposoSubrescapula-label" class="property-label"><g:message code="paciente.paniculoAdiposoSubrescapula.label" default="Panículo Adiposo Subrescapula" /></span>
+					
+						<span class="property-value" aria-labelledby="paniculoAdiposoSubrescapula-label"><g:fieldValue bean="${pacienteInstance}" field="paniculoAdiposoSubrescapula"/></span>
+					
+				</li>
+				</g:if>
+                          
+				<g:if test="${pacienteInstance?.pesoIdeal}">
+				<li class="fieldcontain">
+					<span id="pesoIdeal-label" class="property-label"><g:message code="paciente.pesoIdeal.label" default="Peso Ideal Hombres" /></span>
+					
+						<span class="property-value" aria-labelledby="pesoIdeal-label"><g:fieldValue bean="${pacienteInstance}" field="pesoIdeal"/></span>
+					
+				</li>
+				</g:if>
+                          
+                          <g:if test="${pacienteInstance?.estaturaConProblemas}">
+				<li class="fieldcontain">
+					<span id="estaturaConProblemas-label" class="property-label"><g:message code="paciente.estaturaConProblemas.label" default="Estatura Con Problemas (m)" /></span>
+					
+						<span class="property-value" aria-labelledby="estaturaConProblemas-label"><g:fieldValue bean="${pacienteInstance}" field="estaturaConProblemas"/></span>
 					
 				</li>
 				</g:if>
@@ -509,65 +547,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${pacienteInstance?.aportenutricional}">
+						
+			
+				
+			
+				
+			
+					
+				
+                          
+                                <g:if test="${pacienteInstance?.aportenutricional}">
 				<li class="fieldcontain">
 					<span id="aportenutricional-label" class="property-label"><g:message code="paciente.aportenutricional.label" default="Aportenutricional" /></span>
 					
 						<span class="property-value" aria-labelledby="aportenutricional-label"><g:link controller="aporteNutricional" action="show" id="${pacienteInstance?.aportenutricional?.id}">${pacienteInstance?.aportenutricional?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${pacienteInstance?.IMC}">
-				<li class="fieldcontain">
-					<span id="IMC-label" class="property-label"><g:message code="paciente.IMC.label" default="IMC" /></span>
-					
-						<span class="property-value" aria-labelledby="IMC-label"><g:fieldValue bean="${pacienteInstance}" field="IMC"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${pacienteInstance?.estaturaHombre}">
-				<li class="fieldcontain">
-					<span id="estaturaHombre-label" class="property-label"><g:message code="paciente.estaturaHombre.label" default="Estatura Hombre" /></span>
-					
-						<span class="property-value" aria-labelledby="estaturaHombre-label"><g:fieldValue bean="${pacienteInstance}" field="estaturaHombre"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${pacienteInstance?.estaturaMujeres}">
-				<li class="fieldcontain">
-					<span id="estaturaMujeres-label" class="property-label"><g:message code="paciente.estaturaMujeres.label" default="Estatura Mujeres" /></span>
-					
-						<span class="property-value" aria-labelledby="estaturaMujeres-label"><g:fieldValue bean="${pacienteInstance}" field="estaturaMujeres"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${pacienteInstance?.panículoAdiposoSubrescapula}">
-				<li class="fieldcontain">
-					<span id="panículoAdiposoSubrescapula-label" class="property-label"><g:message code="paciente.panículoAdiposoSubrescapula.label" default="Panículo Adiposo Subrescapula" /></span>
-					
-						<span class="property-value" aria-labelledby="panículoAdiposoSubrescapula-label"><g:fieldValue bean="${pacienteInstance}" field="panículoAdiposoSubrescapula"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${pacienteInstance?.pesoIdealHombres}">
-				<li class="fieldcontain">
-					<span id="pesoIdealHombres-label" class="property-label"><g:message code="paciente.pesoIdealHombres.label" default="Peso Ideal Hombres" /></span>
-					
-						<span class="property-value" aria-labelledby="pesoIdealHombres-label"><g:fieldValue bean="${pacienteInstance}" field="pesoIdealHombres"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${pacienteInstance?.pesoIdealMujeres}">
-				<li class="fieldcontain">
-					<span id="pesoIdealMujeres-label" class="property-label"><g:message code="paciente.pesoIdealMujeres.label" default="Peso Ideal Mujeres" /></span>
-					
-						<span class="property-value" aria-labelledby="pesoIdealMujeres-label"><g:fieldValue bean="${pacienteInstance}" field="pesoIdealMujeres"/></span>
 					
 				</li>
 				</g:if>

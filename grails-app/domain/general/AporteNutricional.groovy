@@ -200,4 +200,8 @@ class AporteNutricional {
     static mapping = {
         table 'aportenutricional'
     }
+    
+    String toString(){
+        return paciente
+    }
 }

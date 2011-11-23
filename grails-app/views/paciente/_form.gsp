@@ -28,25 +28,35 @@
     p3 = document.getElementById("pmb").value;
     p4 = document.getElementById("ps").value;
     p5 = document.getElementById("ed").value;
+    p6 = document.getElementById("sexo").value;
     
-    m=((1.27*p1)+(0.87*p2)+(0.98*p3)+(4*p4)-62.69)
-    document.getElementById("idealmujeres").value = m;
-
-    h=((0.98*p1)+(1.16*p2)+(1.72*p3)+(3.7*p4)-81.69)
-    document.getElementById("idealhombres").value = h;
+    if(p6=='M'){
+        h=((0.98*p1)+(1.16*p2)+(1.72*p3)+(3.7*p4)-81.69)
+    document.getElementById("ideal").value = h;
      }
+    else if(p6=='F'){
+      m=((1.27*p1)+(0.87*p2)+(0.98*p3)+(4*p4)-62.69)
+    document.getElementById("ideal").value = m;
+    }
+     }
+     
     
     function estaturaprob(){
       p22 = document.getElementById("ar").value;
       p55 = document.getElementById("ed").value;
+      p25 = document.getElementById("sexo").value;
       
-      emp=((1.83*p22)-(0.24*p55)+(84.88))
-      document.getElementById("estatprobmujeres").value = emp;
-      ehp=((2.02*p22)-(0.04*p55)+(64.19))
-      document.getElementById("estatprobhombres").value = ehp;
-  
-} 
- 
+       if(p25=='M'){
+   emp=((1.83*p22)-(0.24*p55)+(84.88))/100
+      document.getElementById("estaturaproblemas").value = emp;
+     }
+    else if(p25=='F'){
+         ehp=((2.02*p22)-(0.04*p55)+(64.19))/100
+      document.getElementById("estaturaproblemas").value = ehp;
+    }
+     }
+     
+      
     </script>
   </head>
   <div id="accordion">
@@ -73,7 +83,7 @@
           <g:message code="paciente.sexo.label" default="Sexo" />
           <span class="required-indicator">*</span>
         </label>
-        <g:select name="sexo" from="${pacienteInstance.constraints.sexo.inList}" required="" value="${pacienteInstance?.sexo}" valueMessagePrefix="paciente.sexo"/>
+        <g:select name="sexo" id="sexo"from="${pacienteInstance.constraints.sexo.inList}" required="" value="${pacienteInstance?.sexo}" valueMessagePrefix="paciente.sexo"/>
       </div>
 
       <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'edad', 'error')} required">
@@ -200,48 +210,32 @@
         </label>
         <g:field type="number" name="perimetroMedioBranquial" id="pmb" required="" value="${fieldValue(bean: pacienteInstance, field: 'perimetroMedioBranquial')}"onChange="multiplicar()"/>
       </div>
-      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'panículoAdiposoSubrescapula', 'error')} required">
-        <label for="panículoAdiposoSubrescapula">
-          <g:message code="paciente.panículoAdiposoSubrescapula.label" default="Panículo Adiposo Subescapular (mm)" />
+      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'paniculoAdiposoSubrescapula', 'error')} required">
+        <label for="paniculoAdiposoSubrescapula">
+          <g:message code="paciente.paniculoAdiposoSubrescapula.label" default="Panículo Adiposo Subescapular (mm)" />
           <span class="required-indicator">*</span>
         </label>
-        <g:field type="number" name="panículoAdiposoSubrescapula" id="ps" required="" value="${fieldValue(bean: pacienteInstance, field: 'panículoAdiposoSubrescapula')}" onChange="multiplicar()"/>
+        <g:field type="number" name="paniculoAdiposoSubrescapula" id="ps" required="" value="${fieldValue(bean: pacienteInstance, field: 'paniculoAdiposoSubrescapula')}" onChange="multiplicar()"/>
       </div>
 
-      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'pesoIdealHombres', 'error')} required">
-        <label for="pesoIdealHombres">
-          <g:message code="paciente.pesoIdealHombres.label" default="Peso Ideal Hombres" />
+      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'pesoIdeal', 'error')} required">
+        <label for="pesoIdeal">
+          <g:message code="paciente.pesoIdeal.label" default="Peso Ideal " />
           <span class="required-indicator">*</span>
         </label>
-        <g:field type="number" name="pesoIdealHombres" id="idealhombres" required="" value="${fieldValue(bean: pacienteInstance, field: 'pesoIdealHombres')}" onfocus="this.blur()"/>
-      </div>
-
-      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'pesoIdealMujeres', 'error')} required">
-        <label for="pesoIdealMujeres">
-          <g:message code="paciente.pesoIdealMujeres.label" default="Peso Ideal Mujeres" />
-          <span class="required-indicator">*</span>
-        </label>
-        <g:field type="number" name="pesoIdealMujeres" id="idealmujeres"required="" value="${fieldValue(bean: pacienteInstance, field: 'pesoIdealMujeres')}"onfocus="this.blur()"/>
+        <g:field type="number" name="pesoIdeal" id="ideal" required="" value="${fieldValue(bean: pacienteInstance, field: 'pesoIdeal')}" onfocus="this.blur()"/>
       </div>
       <br>
       <p align="center"><b center>Estatura Ancianos Con Complicaciones</b></p>
       </br> 
-      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'estaturaHombre', 'error')} required">
-        <label for="estaturaHombre">
-          <g:message code="paciente.estaturaHombre.label" default="Estatura Hombres" />
+      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'estaturaConProblemas', 'error')} required">
+        <label for="estaturaConProblemas">
+          <g:message code="paciente.estaturaConProblemas.label" default="Estatura Con Problemas (m)" />
 
         </label>
-        <g:field type="number" name="estaturaHombre" id="estatprobhombres"required="" value="${fieldValue(bean: pacienteInstance, field: 'estaturaHombre')}" onfocus="this.blur()"/>
+        <g:field type="number" name="estaturaConProblemas" id="estaturaproblemas"required="" value="${fieldValue(bean: pacienteInstance, field: 'estaturaConProblemas')}" onfocus="this.blur()"/>
       </div>
-
-      <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'estaturaMujeres', 'error')} required">
-        <label for="estaturaMujeres">
-          <g:message code="paciente.estaturaMujeres.label" default="Estatura Mujeres" />
-
-        </label>
-        <g:field type="number" name="estaturaMujeres" id="estatprobmujeres"required="" value="${fieldValue(bean: pacienteInstance, field: 'estaturaMujeres')}" onfocus="this.blur()"/>
-      </div>
-
+   
 
       <div class="fieldcontain ${hasErrors(bean: pacienteInstance, field: 'horasSueño', 'error')} required">
         <label for="horasSueño">

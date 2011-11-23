@@ -5,7 +5,7 @@ class Paciente {
     String nombre
     String apellidos
     String sexo = 'M'
-    Integer edad
+    BigDecimal edad
     String direccion
     String ciudad
     String estado = 'Aguascalientes'
@@ -21,11 +21,10 @@ class Paciente {
     BigDecimal alturaRodilla 
     BigDecimal perimetroPantorrilla 
     BigDecimal perimetroMedioBranquial
-    BigDecimal panículoAdiposoSubrescapula
-    BigDecimal PesoIdealMujeres
-    BigDecimal PesoIdealHombres
-    BigDecimal EstaturaMujeres
-    BigDecimal EstaturaHombre
+    BigDecimal paniculoAdiposoSubrescapula
+    BigDecimal PesoIdeal
+    BigDecimal EstaturaConProblemas
+ 
     
         
     BigDecimal horasSueño 
@@ -91,12 +90,12 @@ class Paciente {
         alturaRodilla (matches:"[0-9]", scale:2, precision: 8, blank: false)
         IMC (matches:"[0-9]", scale:2, precision: 8, blank: false)
         diagnostico (blank:false)
+        alturaRodilla(matches:"[0-9]", scale:2, precision: 8, blank:false)
         perimetroPantorrilla(matches:"[0-9]", scale:2, precision: 8, blank:false)
         perimetroMedioBranquial(matches:"[0-9]", scale:2, precision: 8, blank:false)
-        PesoIdealMujeres(matches:"[0-9]", scale:2, precision: 8, blank:false)
-        PesoIdealHombres(matches:"[0-9]", scale:2, precision: 8, blank:false)
-        EstaturaHombre (matches:"[0-9][.]", scale:2, precision: 8, blank:true)
-        EstaturaMujeres (matches:"[0-9][.]", scale:2, precision: 8, blank:true)
+        paniculoAdiposoSubrescapula(matches:"[0-9]", scale:2, precision: 8, blank:false)
+        PesoIdeal(matches:"[0-9]", scale:2, precision: 8, blank:false)
+        EstaturaConProblemas (matches:"[0-9][.]", scale:2, precision: 8, blank:true)
            	
         horasSueño (matches:"[0-9]", scale:2, precision: 8, blank:false)
         actividadFisica (blank:false, inList:['Sedentaria', 'Moderada', 'Activa'])
@@ -117,8 +116,8 @@ class Paciente {
         padecimientoActual (blank:false)
         usoMedicamentos (blank:false)
         
-        comidasporDia (blank:false, inList:['1','2','3','Más'])
-        colaciones (blank:false, inList:['1','2','3','Más'])
+        comidasporDia (blank:false, inList:['1','2','3','Mas'])
+        colaciones (blank:false, inList:['1','2','3','Mas'])
         lacteosporSemana (blank:false, inList:['1 por semana','2 por semana','3 por semana','4 por semana','5 por semana','6 por semana','Toda la semana'])
         carnesRojasporSemana (blank:false, inList:['1 por semana','2 por semana','3 por semana','4 por semana','5 por semana','6 por semana','Toda la semana'])
         pescado (blank:false, inList:['1 por semana','2 por semana','3 por semana','4 por semana','5 por semana','6 por semana','Toda la semana'])
