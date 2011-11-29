@@ -117,6 +117,10 @@ img {
 	color: #255b17;
 }
 
+#copyright{
+    color:#000;
+}
+
 .spinner {
 	background: url(../images/spinner.gif) 50% 50% no-repeat transparent;
 	height: 16px;

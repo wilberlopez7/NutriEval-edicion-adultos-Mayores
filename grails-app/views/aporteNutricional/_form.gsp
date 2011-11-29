@@ -9,6 +9,11 @@
       var carbotot=0
       
      function verdurastotal(){
+      this.energiatot=0
+      this.proteinatot=0
+      this.lipidostot=0
+      this.carbotot=0
+    
     v1 = document.getElementById("cantverd").value;
     v2 = (v1*25);
     v3 = (v1*2);
@@ -26,6 +31,7 @@
      }
      
        function frutastotal(){
+         
     f1 = document.getElementById("cantfru").value;
     f2 = (f1*60);
     f3 = (f1*0);

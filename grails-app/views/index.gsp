@@ -79,15 +79,7 @@
                      <div class="content" style="padding:10px 25px;">
 			 <h1 style="padding:0;margin:0;">Bienvenido(a) a NutriEval</h1>
 			<p>Sistema Desarrollado Para el Control de La Nutrición y Dietética del Adulto Mayor</p>
-			<div id="controller-list" role="navigation">                        
-				<h2>Seleccione Una Opción:</h2>
-				<ul>
-				<li><g:link class="create" action="create" controller="paciente">Agregar Nuevo Paciente</g:link></li>
-                                <li><g:link class="create" action="create" controller="AporteNutricional">Agregar Tabla de Aporte Nutricional</g:link></li>
-                                <li><g:link class="list" action="list" controller="paciente">Ver Lista de Pacientes</g:link></li>
-                                <li><g:link class="list" action="list" controller="AporteNutricional">Ver Lista de Tablas de Aporte Nutricional </g:link></li>
-				</ul>
-			</div>
+			
                      </div>
 		</div>
 	</body>

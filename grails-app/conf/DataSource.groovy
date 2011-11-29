@@ -4,7 +4,7 @@ dataSource {
    username = "tomcat"
     password = "tomcat00"
     dbCreate = "update" // create, create-drop, update
-    url = 'jdbc:postgresql:nutricion'
+    url = 'jdbc:postgresql:nutrieval'
 }
 hibernate {
     cache.use_second_level_cache = true
